@@ -32,7 +32,7 @@ export const Navbar = () => {
 				</Link>
 			</div>
 
-			<div><small class="brand-name"><span style={{color:"#d50000"}}>Home Of Positiveness</span></small></div>
+			<div><small class="brand-name hide-in-main-nav"><span style={{color:"#d50000"}}>Home Of Positiveness</span></small></div>
 			<div></div>
 
 			<ul className={menuStyles} onClick={menuHandler} id="menu">
