@@ -273,6 +273,16 @@ h6 {
 	background-color: var(--color-primary);
 	color: white;
 }
+.btn-outline-twitter {
+	border-color: var(--color-twitter);
+	color: var(--color-twitter);
+	background-color: transparent;
+}
+
+.btn-outline-twitter:hover {
+	background-color: var(--color-twitter);
+	color: white;
+}
 
 .btn-outline-success {
 	border-color: var(--color-success);

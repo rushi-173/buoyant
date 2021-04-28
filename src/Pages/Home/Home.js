@@ -21,7 +21,7 @@ export function Home({data, dataRows}) {
 					
 				})}
 			</div>
-			<div><br/><br/><br/><br/></div>
+			<div className="footer"></div>
 
 		</div>
 	);

@@ -27,6 +27,7 @@ export function SearchAndExplore({data,dataRows}) {
 
 	return (
 		<div className="container-column Home">
+            <div><br/><br/></div>
 							<div
 					className="container search-container"
 					id="search" style={{flexWrap:"nowrap"}}
