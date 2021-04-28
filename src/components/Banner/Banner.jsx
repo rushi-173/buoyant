@@ -6,27 +6,30 @@ export function Banner() {
 	const [frontClass, setFrontClass] = useState("card__side card__side--front front-1");
 	const [backClass, setBackClass] = useState("card__side card__side--back back-1");
 	// const [flipCheck, setFlipCheck]= useState(0);
-    let flipCheck = 1;
-    function rotateCards() {
-        if (flipCheck%2 === 0 ) {
-            setFrontClass("card__side card__side--front showGreen");
-            setBackClass("card__side card__side--back showRed");
-            // setFlipCheck(1)
-            flipCheck += 1;
-
-        } else {
-            setFrontClass("card__side card__side--front");
-            setBackClass("card__side card__side--back");
-            // setFlipCheck(0)
-            flipCheck += 1;
-        }
-		if(flipCheck < 5){
-        setTimeout(rotateCards,3500);}
-    }
+   
+   
 	
 
-	rotateCards();
+	useEffect(() => {
+		function rotateCards() {
+			let flipCheck = 1;
+			if (flipCheck%2 === 0 ) {
+				setFrontClass("card__side card__side--front showGreen");
+				setBackClass("card__side card__side--back showRed");
+				// setFlipCheck(1)
+				flipCheck += 1;
 	
+			} else {
+				setFrontClass("card__side card__side--front");
+				setBackClass("card__side card__side--back");
+				// setFlipCheck(0)
+				flipCheck += 1;
+			}
+			if(flipCheck < 5){
+			setTimeout(rotateCards,3500);}
+		}
+		rotateCards();
+	},[]);
 
 	return (
 		<div className="banner-card">
