@@ -2,11 +2,21 @@ import React from "react";
 import "./Home.css";
 // import {Link} from "react-router-dom";
 import { Banner, NewsCard } from "../../components/index";
+import { useEffect } from "react";
 
 export function Home({data, dataRows}) {
 	console.log("from home",data, dataRows);
 	// const imgUrl = dataRows[6];
 	// console.log(data[0][imgUrl]);
+	useEffect(() => {
+        if(data !== []){
+	
+			data.sort((a,b) => {
+				return new Date(b["Timestamp"])-new Date(a["Timestamp"]);
+				
+			})
+		}
+	}, [ data]);
 
 	return (
 		<div className="container-column Home">
