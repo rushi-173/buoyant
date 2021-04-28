@@ -11,7 +11,7 @@ export function MenuItems(){
             </li>
             <li className="menu-item">
                 <b>
-                    <Link to="/playlists" className="link-to">
+                    <Link to="/share" className="link-to">
                         Share A Good News
                     </Link>
                 </b>
@@ -24,7 +24,7 @@ export function MenuItems(){
             </li> */}
             <li className="menu-item">
                 <b>
-                    <Link to="/">About Us</Link>
+                    <Link to="/about">About Us</Link>
                 </b>
             </li>
         </>

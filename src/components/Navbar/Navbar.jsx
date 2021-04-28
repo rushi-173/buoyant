@@ -32,8 +32,8 @@ export const Navbar = () => {
 				</Link>
 			</div>
 
-			<Search />
-			<MainNavItems />
+			<div><small class="brand-name"><span style={{color:"#d50000"}}>Home Of Positiveness</span></small></div>
+			<div></div>
 
 			<ul className={menuStyles} onClick={menuHandler} id="menu">
 				<MenuItems />

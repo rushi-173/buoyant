@@ -8,19 +8,20 @@ export function Banner() {
 	// const [flipCheck, setFlipCheck]= useState(0);
     let flipCheck = 1;
     function rotateCards() {
-        if (flipCheck === 0) {
+        if (flipCheck%2 === 0 ) {
             setFrontClass("card__side card__side--front showGreen");
             setBackClass("card__side card__side--back showRed");
             // setFlipCheck(1)
-            flipCheck = 1;
+            flipCheck += 1;
 
         } else {
             setFrontClass("card__side card__side--front");
             setBackClass("card__side card__side--back");
             // setFlipCheck(0)
-            flipCheck = 0;
+            flipCheck += 1;
         }
-        setTimeout(rotateCards,3500);
+		if(flipCheck < 5){
+        setTimeout(rotateCards,3500);}
     }
 	
 
@@ -32,16 +33,18 @@ export function Banner() {
 		<div className="banner-card">
 			<div className={frontClass} id="front-1">
 				<div className="text-box">
-					<h3 className="text-box-top">HAPPINESS</h3>
-					<h1 className="text-box-middle">is turning your space into a</h1>
-					<h3 className="text-box-lower">---Garden---</h3>
+					
+				<h1 className="text-box-middle">Tired of all</h1>
+					<h3 className="text-box-top">NEGATIVE</h3>
+					<h3 className="text-box-lower">---things out there---</h3>
 				</div>
 			</div>
 			<div className={backClass} id="back-1">
 				<div className="text-box">
-					<h3 className="text-box-top">HAPPINESS</h3>
-					<h1 className="text-box-middle">is having more and more</h1>
-					<h3 className="text-box-lower">---Plants---</h3>
+					
+				<h1 className="text-box-middle" style={{color:"#3E2723"}}>Try looking at</h1>
+					<h3 className="text-box-top"  style={{color:"#d50000"}}>POSITIVE</h3>
+					<h3 className="text-box-lower" style={{color:"#3E2723"}}>---stuff through our lens---</h3>
 				</div>
 			</div>
 		</div>

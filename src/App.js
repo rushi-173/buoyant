@@ -1,8 +1,9 @@
 import './App.css';
 import {Navbar, Sidebar} from "./components";
-import {Home} from "./Pages";
+import {Home, ShareNews, SearchAndExplore} from "./Pages";
 import {Routes, Route} from "react-router-dom";
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import { useState,  useEffect } from 'react';
 
 // Config variables
 const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
@@ -32,7 +33,6 @@ const appendSpreadsheet = async (row) => {
     console.error('Error: ', e);
   }
 };
-
 const readSheet = async () =>{
   try {
     await doc.useServiceAccountAuth({
@@ -41,22 +41,37 @@ const readSheet = async () =>{
     });
     // loads document properties and worksheets
     await doc.loadInfo(); // loads document properties and worksheets
-  console.log(doc.title);
+  console.log(doc);
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
   console.log(sheet.title);
-  console.log(sheet.rowCount);
+  const sheetRows = await sheet.getRows();
+  return {sheetRows, doc};
+  console.log(sheet.rowCount,  sheetRows);
   } catch (e) {
     console.error('Error: ', e);
   }
-  
+  return [];
 }
-readSheet();
 // const newRow = { Name: "new name", Value: "new value" };
 
 // appendSpreadsheet(newRow);
 
 function App() {
+  const [data, setData] = useState([]);
+  const [dataRows, setDataRows] = useState([]);
+
+  useEffect(()=>{
+    async function getData () {
+      const tempDetails = await readSheet();
+      setData(tempDetails.sheetRows); 
+      console.log(tempDetails)
+      setDataRows(tempDetails.doc._rawSheets["492812941"]["headerValues"]);
+    }
+    getData();
+  }, [])
+
+
   return (
     <div className="App">
 			<Navbar />
@@ -64,8 +79,10 @@ function App() {
         <Sidebar/>
 		
 				<div className="main-window-container">
-          <Home/>
 					<Routes>
+            <Route path="/" element={<Home data={data} dataRows={dataRows}/>}/>
+            <Route path="/share" element={<ShareNews/>}/>
+            <Route path="/search" element={<SearchAndExplore data={data} dataRows={dataRows}/>}/>
 					</Routes>
 				</div>
 			</div>
