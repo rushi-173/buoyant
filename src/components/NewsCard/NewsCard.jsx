@@ -24,7 +24,7 @@ export function NewsCard({ news, dataRows }) {
 			<div className="description-details">
 				<h3
 					style={{
-						wordBreak: "break-all",
+						wordBreak: "break",
 						margin: "0px",
 						marginBottom: "0.5rem",
 					}}
