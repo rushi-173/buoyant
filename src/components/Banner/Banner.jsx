@@ -27,7 +27,7 @@ export function Banner() {
 
 	useEffect(() => {
 		rotateCards();
-	});
+	},[]);
 
 	return (
 		<div className="banner-card">
