@@ -13,7 +13,7 @@ export function NewsCard({ news, dataRows }) {
 		// }
 		if(news["Link to Source :"] !== "" ){
 			return (
-			<a href={news["Link to Source :"]} rel="noreferrer" target="_blank" className="badge bg-primary">
+			<a href={news["Link to Source :"]} rel="noreferrer" target="_blank" className="btn btn-primary">
 				Visit Source
 			</a>
 		) }
