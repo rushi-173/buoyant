@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import { Banner, NewsCard } from "../../components/index";
 
 export function Home({data, dataRows}) {
@@ -14,7 +14,7 @@ export function Home({data, dataRows}) {
 			<h4 className="text-box-top-mini"><span>❤️</span> WALL &nbsp;OF&nbsp; HAPPINESS <span>❤️</span></h4>
 			<div className="news-container">
 				{data.map((item)=>{
-					if(item["verified"]=="1"){
+					if(item["verified"]==="1"){
 					return <NewsCard news={item} dataRows={dataRows}/>
 					}
 					return null;

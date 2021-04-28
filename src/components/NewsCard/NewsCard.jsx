@@ -1,5 +1,4 @@
 import "./NewsCard.css";
-import {Link} from "react-router-dom";
 
 export function NewsCard({ news , dataRows}) {
 	console.log("news", news, dataRows);

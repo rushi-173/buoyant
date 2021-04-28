@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from "react";
 import "./SearchAndExplore.css";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import { NewsCard } from "../../components/index";
 
 export function SearchAndExplore({data,dataRows}) {
@@ -17,7 +17,7 @@ export function SearchAndExplore({data,dataRows}) {
 	}, []);
 
 	useEffect(() => {
-        if(data != []){
+        if(data !== []){
 		setResult(
 			data.filter((item) => {
 				return item["Title:"].toUpperCase().includes(searchText.trim().toUpperCase());

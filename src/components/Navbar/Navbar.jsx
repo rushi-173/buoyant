@@ -2,8 +2,8 @@ import "./Navbar.css";
 import { useState } from "react";
 import { Hamburger } from "./Hamburger";
 import { MenuItems } from "./MenuItems";
-import { MainNavItems } from "./MainNavItems";
-import { Search } from "../Search/Search";
+// import { MainNavItems } from "./MainNavItems";
+// import { Search } from "../Search/Search";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
