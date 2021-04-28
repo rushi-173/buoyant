@@ -21,6 +21,7 @@ export function Home({data, dataRows}) {
 					
 				})}
 			</div>
+			<div><br/><br/><br/><br/></div>
 
 		</div>
 	);
