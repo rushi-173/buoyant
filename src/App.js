@@ -5,7 +5,7 @@ import {Routes, Route} from "react-router-dom";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { useState,  useEffect } from 'react';
 
-// Config variables
+// // Config variables
 const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
 const SHEET_ID = process.env.REACT_APP_SHEET_ID;
 const CLIENT_EMAIL = process.env.REACT_APP_GOOGLE_CLIENT_EMAIL;

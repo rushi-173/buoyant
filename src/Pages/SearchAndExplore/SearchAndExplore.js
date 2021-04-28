@@ -56,7 +56,7 @@ export function SearchAndExplore({data,dataRows}) {
             <h4 className="text-box-top-mini"><span>❤️</span> FIND &nbsp;OLD&nbsp; HAPPY &nbsp; NEWS <span>❤️</span></h4>
 			<div className="news-container">
 				{result.map((item)=>{
-					if(item["verified"]=="1"){
+					if(item["verified"]==="1"){
 					return <NewsCard news={item} dataRows={dataRows}/>
 					}
 					return null;

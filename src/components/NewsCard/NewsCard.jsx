@@ -20,7 +20,7 @@ export function NewsCard({ news , dataRows}) {
 
 			 
 			<div className="card-img-container">
-				<a href={news["Link to Source :"]} target="_blank">Source</a>
+				<a href={news["Link to Source :"]} rel="noreferrer" target="_blank">Source</a>
 			</div>
 		</div>
 	);
